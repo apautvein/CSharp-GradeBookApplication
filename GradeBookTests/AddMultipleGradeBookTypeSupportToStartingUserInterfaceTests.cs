@@ -35,7 +35,7 @@ namespace GradeBookTests
                     using (var consolestream = new StringWriter())
                     {
                         Console.SetOut(consolestream);
-                        // StartingUserInterface.CreateCommand("create test");
+                        StartingUserInterface.CreateCommand("create test");
                         output = consolestream.ToString().ToLower();
 
                         //Test that message written to console when parts.length != 3.
@@ -79,7 +79,7 @@ namespace GradeBookTests
                     using (var consolestream = new StringWriter())
                     {
                         Console.SetOut(consolestream);
-                        // StartingUserInterface.CreateCommand("create test");
+                        StartingUserInterface.CreateCommand("create test");
                         output = consolestream.ToString().ToLower();
 
                         //Test that message written to console is correct.
@@ -125,7 +125,7 @@ namespace GradeBookTests
                     using (var consolestream = new StringWriter())
                     {
                         Console.SetOut(consolestream);
-                        // StartingUserInterface.CreateCommand("create test standard");
+                        StartingUserInterface.CreateCommand("create test standard");
                         output = consolestream.ToString().ToLower();
 
                         Assert.True(output.Contains("standard"), "`GradeBook.UserInterfaces.StartingUserInterface` didn't create a `StandardGradeBook` when 'standard' was used with the `CreateCommand`.");
@@ -176,7 +176,7 @@ namespace GradeBookTests
                 using (var consolestream = new StringWriter())
                 {
                     Console.SetOut(consolestream);
-                    // StartingUserInterface.CreateCommand("create test incorrect");
+                    StartingUserInterface.CreateCommand("create test incorrect");
                     output = consolestream.ToString().ToLower();
 
                     Assert.True(output.Contains("incorrect is not a supported type of gradebook, please try again"), "`GradeBook.UserInterfaces.StartingUserInterface` write the entered type followed by ' is not a supported type of gradebook, please try again' when an unknown value was used with the `CreateCommand`.");

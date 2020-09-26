@@ -76,7 +76,7 @@ namespace GradeBookTests
                     using (var consolestream = new StringWriter())
                     {
                         Console.SetOut(consolestream);
-                        // StartingUserInterface.CreateCommand("create test standard");
+                        StartingUserInterface.CreateCommand("create test standard");
                         output = consolestream.ToString().ToLower();
 
                         //Test that message written to console when parts.length != 4.
@@ -108,7 +108,7 @@ namespace GradeBookTests
                     using (var consolestream = new StringWriter())
                     {
                         Console.SetOut(consolestream);
-                        // StartingUserInterface.CreateCommand("create test standard true");
+                        StartingUserInterface.CreateCommand("create test standard true");
                         output = consolestream.ToString().ToLower();
 
                         Assert.True(output.Contains("standard"), "`GradeBook.UserInterfaces.StartingUserInterface` didn't create a gradebook when the `CreateCommand` included a name, type, and if it was weighted (true / false).");
