@@ -13,7 +13,7 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine(string.Empty);
                 Console.WriteLine(">> What would you like to do?");
                 var command = Console.ReadLine().ToLower();
-                CommandRoute(command);
+                // CommandRoute(command);
             }
         }
 
