@@ -17,10 +17,10 @@ namespace GradeBook.UserInterfaces
             }
         }
 
-        public static void CommandRoute(string command)
+        public static void CommandRoute(string command, bool isWeighted)
         {
             if (command.StartsWith("create"))
-                CreateCommand(command);
+                CreateCommand(command, isWeighted);
             else if (command.StartsWith("load"))
                 LoadCommand(command);
             else if (command == "help")
@@ -31,12 +31,12 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("{0} was not recognized, please try again.", command);
         }
 
-        public static void CreateCommand(string command)
+        public static void CreateCommand(string command, bool isWeighted)
         {
             var parts = command.Split(' ');
-            if (parts.Length != 3)
+            if (parts.Length != 4)
             {
-                Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
+                Console.WriteLine("Command not valid, Create requires a name, type of gradebook, if it's weighted (true / false).");
                 return;
             }
             var name = parts[1];
@@ -45,11 +45,11 @@ namespace GradeBook.UserInterfaces
 
             if (type == "standard")
             {
-                gradeBook = new StandardGradeBook(name);
+                gradeBook = new StandardGradeBook(name, isWeighted);
             }
             else if (type == "ranked")
             {
-                gradeBook = new RankedGradeBook(name);
+                gradeBook = new RankedGradeBook(name, isWeighted);
             }
             else
             {
